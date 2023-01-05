@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D IMAGE BOXES</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./jquery/JQUERY.js"></script>
+    
+</head>
+<body>
+    <button id="btn">CLICK</button>
+    <div class="boxes big" id="boxes"></div>
+   
+    
+
+</body>
+<script>
+ const boxesContainer=document.getElementById("boxes");
+ const button=document.getElementById("btn");
+
+ button.addEventListener('click', () => boxesContainer.classList.toggle('big'));
+
+ function createBoxes()
+ {
+     for(var i=0;i<4;i++)
+     {
+         for(var j=0;j<4;j++)
+         {
+             const boxDiv=document.createElement('div')
+             boxDiv.classList.add('box')
+             boxDiv.style.backgroundPosition=`${-j*125}px ${-i*125}px`
+             boxesContainer.appendChild(boxDiv)
+             console.log(boxDiv)
+         }
+         
+     }
+ }
+ 
+createBoxes()
+</script>
+</html>
